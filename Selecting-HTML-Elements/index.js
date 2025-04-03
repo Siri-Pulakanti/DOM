@@ -18,3 +18,9 @@ setTimeout(() => {
   document.querySelector("h2").innerHTML = "<em>Siri</em>";
   document.querySelector("h1").innerHTML = "Dwaraka";
 }, 5000); // 5000ms = 5 seconds
+document
+  .getElementsByTagName("button")[0]
+  .addEventListener("click", handleButtonClick);
+function handleButtonClick() {
+  alert("Clicking a button");
+}
