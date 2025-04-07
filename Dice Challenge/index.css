@@ -20,6 +20,16 @@ p {
 img {
   width: 80%;
 }
+button {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #9c060c;
+  color: white;
+  border: none;
+}
 footer {
   color: #eeeeee;
   margin-top: 5%;
