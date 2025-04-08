@@ -3,11 +3,17 @@ body {
   text-align: center;
 }
 h1 {
-  margin: 30px;
+  margin: 0 30px;
   font-family: "Lobster", cursive;
   text-shadow: 5px 0 #232931;
   font-size: 8rem;
   color: #4ecca3;
+}
+.instruction {
+  width: 75%;
+  text-align: center;
+  margin: auto;
+  color: #e2e22b;
 }
 div {
   display: inline-block;
@@ -23,7 +29,7 @@ img {
 button {
   display: block;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 5px 10px;
   border-radius: 5px;
   background-color: #9c060c;
@@ -32,6 +38,10 @@ button {
 }
 footer {
   color: #eeeeee;
-  margin-top: 5%;
+  margin-top: 20px;
   font-family: "Indie Flower", cursive;
+}
+
+#turn {
+  margin-top: 20px;
 }
