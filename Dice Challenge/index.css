@@ -36,6 +36,10 @@ button {
   color: white;
   border: none;
 }
+
+.hide-element {
+  display: none;
+}
 footer {
   color: #eeeeee;
   margin-top: 20px;

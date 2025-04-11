@@ -1,8 +1,24 @@
 let count = 0,
   player1Score = 0,
   player2Score = 0;
-document.querySelector("button").addEventListener("click", handleButtonClick);
-function handleButtonClick() {
+document
+  .querySelector("#roll-btn")
+  .addEventListener("click", handleRollButtonClick);
+document
+  .querySelector("#reply-btn")
+  .addEventListener("click", handleReplayClick);
+function handleReplayClick() {
+  document.querySelector("#roll-btn").classList.toggle("hide-element");
+  document.querySelector("#reply-btn").classList.toggle("hide-element");
+  player1Score = 0;
+  player2Score = 0;
+  count = 0;
+  document.querySelector("#p1").textContent = "Player-1";
+  document.querySelector("#p2").textContent = "Player-2 ";
+  document.querySelector("h1").innerHTML = "5-Roll Dice Battle";
+  document.querySelector("#turn").innerHTML = "You have 5 turns left";
+}
+function handleRollButtonClick() {
   let randomInt = Math.floor(Math.random() * 6 + 1);
   player1Score = player1Score + randomInt;
 
@@ -18,11 +34,9 @@ function handleButtonClick() {
   document.querySelector("#turn").innerHTML =
     "You have " + (5 - count) + " turns left";
   document.querySelector("#p1").textContent = "Player-1 score: " + player1Score;
-
   document.querySelector("#p2").textContent = "Player-2 score: " + player2Score;
 
   if (count == 5) {
-    count = 0;
     document.querySelector("#turn").innerHTML = "Game is over";
     if (player1Score > player2Score) {
       document.querySelector("h1").innerHTML = "Player-1 won";
@@ -31,6 +45,7 @@ function handleButtonClick() {
     } else {
       document.querySelector("h1").innerHTML = "Player-2 won";
     }
-    ß;
+    document.querySelector("#roll-btn").classList.toggle("hide-element");
+    document.querySelector("#reply-btn").classList.toggle("hide-element");
   }
 }
