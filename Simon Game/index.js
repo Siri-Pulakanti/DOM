@@ -28,7 +28,7 @@ function handleBoxClick(pressedButton) {
       playSound("wrong");
       document.querySelector("h1").innerHTML =
         "Game Over!!! Your score is " +
-        gameSequence.length +
+        (gameSequence.length - 1) +
         " Press any key to start";
 
       userSequence = [];
