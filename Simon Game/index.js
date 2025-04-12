@@ -1,3 +1,9 @@
+let isGameStarted = false;
+let gameSequence = [];
+let userSequence = [];
+let userClickCount = 0;
+document.addEventListener("keypress", startGame);
+let allBoxColors = ["red", "blue", "green", "yellow"];
 function playSound(pressedButton) {
   let audio = new Audio("sounds/" + pressedButton + ".mp3");
   audio.play();
@@ -14,6 +20,38 @@ for (let i = 0; i < k.length; i++) {
   k[i].addEventListener("click", () => handleBoxClick(pressedBtnId));
 }
 function handleBoxClick(pressedButton) {
-  playSound(pressedButton);
-  animateButton(pressedButton);
+  if (isGameStarted == true) {
+    playSound(pressedButton);
+    animateButton(pressedButton);
+    userSequence.push(pressedButton);
+    if (userSequence[userClickCount] != gameSequence[userClickCount]) {
+      alert("wrong");
+      isGameStarted = false;
+    } else {
+      userClickCount++;
+      if (gameSequence.length == userClickCount) {
+        userSequence = [];
+        userClickCount = 0;
+        setTimeout(() => {
+          selectRandomBox();
+        }, 500);
+      }
+    }
+
+    console.log(userSequence);
+  }
+}
+function startGame() {
+  if (isGameStarted == false) {
+    isGameStarted = true;
+    selectRandomBox();
+    console.log("Starting Game");
+  }
+}
+function selectRandomBox() {
+  let randomNum = Math.floor(Math.random() * 4);
+  let selectedBox = allBoxColors[randomNum];
+  playSound(selectedBox);
+  animateButton(selectedBox);
+  gameSequence.push(selectedBox);
 }
