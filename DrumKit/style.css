@@ -1,0 +1,30 @@
+body {
+  background-color: #283148;
+  text-align: center;
+}
+.buttons {
+  margin: 10% auto;
+}
+button {
+  color: #da0463;
+  font-size: 5rem;
+  border: 10px solid #404b69;
+  border-radius: 15px;
+  font-family: "Arvo", cursive;
+  height: 150px;
+  width: 150px;
+  font-weight: 900;
+  text-shadow: 3px 0 #dbedf3;
+  margin: 10px;
+}
+h1 {
+  text-shadow: 3px 0 #da0463;
+  font-size: 5rem;
+  color: #dbedf3;
+  font-family: "Arvo", cursive;
+}
+
+footer {
+  color: #dbedf3;
+  font-family: sans-serif;
+}
