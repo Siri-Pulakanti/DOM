@@ -25,7 +25,17 @@ function handleBoxClick(pressedButton) {
     animateButton(pressedButton);
     userSequence.push(pressedButton);
     if (userSequence[userClickCount] != gameSequence[userClickCount]) {
-      alert("wrong");
+      playSound("wrong");
+      document.querySelector("h1").innerHTML =
+        "Game Over!!! Your score is " +
+        gameSequence.length +
+        " Press any key to start";
+
+      userSequence = [];
+      gameSequence = [];
+      userClickCount = 0;
+
+      animateBody();
       isGameStarted = false;
     } else {
       userClickCount++;
@@ -54,4 +64,11 @@ function selectRandomBox() {
   playSound(selectedBox);
   animateButton(selectedBox);
   gameSequence.push(selectedBox);
+  document.querySelector("h1").innerHTML = "Level - " + gameSequence.length;
+}
+function animateBody() {
+  document.querySelector("body").classList.add("flash");
+  setTimeout(() => {
+    document.querySelector("body").classList.remove("flash");
+  }, 200);
 }

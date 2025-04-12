@@ -12,6 +12,8 @@ p {
   font-size: 1.5rem;
   font-family: monospace;
   color: #db9a77;
+  width: 75%;
+  margin: auto;
 }
 .box {
   height: 200px;
@@ -37,4 +39,7 @@ p {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+.flash {
+  background-color: red;
 }
